@@ -1,213 +1,194 @@
+/* Importar fuente VT323 */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-body{
-    background-color: #FFCC33;
-    font-family: Arial, sans-serif;
+body {
+    background-color: #fcd34d;
+    background-image: url(bg.jpg);
+    font-family: "VT323", monospace; 
     margin: 0;
-    height: 75vh; /* Ocupa toda la altura de la ventana */
+    min-height: 90vh;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-}
-.general{
-
-    display: grid;
-    width: 850px;
-    margin: 20px;
-
-
-
-}
-.titulo{
-    
-    flex-wrap: wrap;
-    background-color: wheat;
-    padding: 5px 10px;
-    text-align: center;
-    font-size: smaller;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(1, 1, 1, 1);   
-}
-
-.container{
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(1, 1, 1, 1);
-    padding: 2rem;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column; /* Coloca los elementos uno debajo del otro */
-    align-items: center; /* Centra horizontalmente los elementos dentro del contenedor */
-    gap: 10px; /* Espacio entre los elementos */
-    border-radius: 10px; /* Bordes redondeados */
-    background-color: #ffffff; /* Fondo blanco del contenedor */
-    box-shadow: 0 4px 6px rgba(1, 1, 1, 1); /* Sombra para darle profundidad */
-}
-#mensaje{
-    color: red;
-    font-weight: 900;
-    font-size: 140%;
-}
-.divDeDivs{
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    background-color: #FFCC33;
-    box-shadow: 0 4px 6px rgba(1, 1, 1, 1); /* Sombra para darle profundidad */
-    border-radius: 10px; /* Bordes redondeados */
-    width: 600px;
-    padding: 25px;
-
-}
-p{
-    max-width: 400px;
-}
-h3, h2, p {
-    font-size: 15px;
-    overflow-wrap: break-word;
-    font-weight: 500;
-}
-input{
-    max-width: 65%;
-}
-.inputs{
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    font-weight: 500;
+    justify-content: center;
+    padding: 1rem;
 }
-/* Mobile (hasta 767px) / */
+
+
+.general {
+    max-width: 56rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.titulo {
+    background-color: #fef3c7;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: levitar 3s ease-in-out infinite alternate;
+    border-style: solid;
+}
+
+
+@keyframes levitar {
+    0% { transform: translateY(10px); }
+    100% { transform: translateY(-10px); }
+}
+
+.titulo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin: 0;
+}
+
+.titulo h2 {
+    font-size: 1.25rem;
+    color: #374151;
+    margin-top: 0.5rem;
+}
+
+/* Contenedor de la calculadora */
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input y etiqueta */
+.inputs {
+    text-align: center;
+}
+
+.inputs label {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+}
+
+.inputs input {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #000000;
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+    font-family: "VT323", monospace;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.inputs p {
+    font-size: 1.5rem;
+    color: #4b5563;
+    margin-top: 0.75rem;
+}
+
+/* Estilo de resultados */
+.divDeDivs {
+    background-color: #feed9d;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Resultados */
+#div1, #div2 {
+    background-color: #ffffff;
+    padding: 0.1rem;
+    padding-left: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    flex: 1;
+}
+
+#div1 h2, #div2 h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.divDeDivs {
+    font-size: 1.5rem;
+}
+
+/* Mensaje de error con animación */
+.error {
+    color: red;
+    font-size: 1.2rem;
+    height: 1.5rem; 
+    opacity: 0; /* no se muestra inicialmente */
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error.visible {
+    opacity: 1; /* Se muestra gradualmente */
+    transform: translateY(0);
+}
+
+/* OJOOOOOOOO */
+/* Los media queries hay que ajustarlos todavia, nunca habia trabajado con ellos */
+
+/* Móviles (hasta 767px) */
 @media (max-width: 767px) {
-/*     body{
-        background-color: orange;
+    .titulo h1 {
+        font-size: 1.5rem; 
     }
-    .general{
-    
-        display: grid;
-        max-width: 850px;
-    
-    
+
+    .titulo h2 {
+        font-size: 1rem; 
     }
-    .titulo{
-        flex-wrap: wrap;
-        background-color: wheat;
-        padding: 5px 10px;
-        text-align: center;
-        font-size: smaller;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(1, 1, 1, 1);   
+
+    .inputs label {
+        font-size: 1.5rem;
     }
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        background-color:#fff;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(1, 1, 1, 1);
-        padding: 2rem;
+
+    .inputs input {
+        font-size: 1.2rem; 
     }
-    #mensaje{
-        color: red;
-        font-weight: 900;
-        font-size: 190%;
+
+    .divDeDivs {
+        flex-direction: column; 
+        gap: 1rem;
     }
-    .divDeDivs{
-        display: flex;
-        border-radius: 100px;
-        border-color:blueviolet;
-        padding: 2rem;
-        gap: 6rem;
-    
+
+    #div1, #div2 {
+        padding: 1rem; 
     }
-     */
 }
 
-/* / Tablet (de 768px a 1024px) / */
+/* Tablets (de 768px a 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .titulo h1 {
+        font-size: 1.75rem;
+    }
 
-/*     body{
-        background-color: rgb(99, 89, 70);
+    .titulo h2 {
+        font-size: 1.1rem; 
     }
-    .general{
-    
-        display: grid;
-        max-width: 850px;
-    
-    
+
+    .inputs label {
+        font-size: 1.7rem; 
     }
-    .titulo{
-        flex-wrap: wrap;
-        background-color: wheat;
-        padding: 5px 10px;
-        text-align: center;
-        font-size: smaller;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(1, 1, 1, 1);   
+
+    .inputs input {
+        font-size: 1.4rem; 
     }
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        background-color:#fff;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(1, 1, 1, 1);
-        padding: 2rem;
-    }
-    #mensaje{
-        color: red;
-        font-weight: 900;
-        font-size: 190%;
-    }
-    .divDeDivs{
-        display: flex;
-        border-radius: 100px;
-        border-color:blueviolet;
-        padding: 2rem;
-        gap: 6rem;
-    
-    } */
 }
-/* 
-/ Computador (desde 1025px en adelante) */
+
+/* Computadoras (desde 1025px en adelante) */
 @media (min-width: 1025px) {
-/* 
-    body{
-        background-color: rgb(66, 8, 166);
-    }
-    .general{
-    
-        display: grid;
-        max-width: 850px;
-    
-    
-    }
-    .titulo{
-        flex-wrap: wrap;
-        background-color: wheat;
-        padding: 5px 10px;
-        text-align: center;
-        font-size: smaller;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(1, 1, 1, 1);   
-    }
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        background-color:#fff;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(1, 1, 1, 1);
-        padding: 2rem;
-    }
-    #mensaje{
-        color: red;
-        font-weight: 900;
-        font-size: 190%;
-    }
-    .divDeDivs{
-        display: flex;
-        border-radius: 100px;
-        border-color:blueviolet;
-        padding: 2rem;
-        gap: 6rem;
-    
-    } */
 }
