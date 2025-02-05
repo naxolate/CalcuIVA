@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="general">
+    <div class="titulo">
+        <h1>Calculadora de IVA</h1><br></br> 
+        <h2>Averigua el valor del IVA, neto y bruto en pesos chilenos</h2>
+    </div>
+      <div class="container">
+        <div class="calcu">
+          <div class="inputs">
+          <label for="input1">Ingresa el monto:</label>
+          <input type="text" maxlength="13" id="campoTexto" placeholder="0" autocomplete="off">
+          <label>IVA: 19%</label><p id="mensaje"></p>
+        </div>
+        </div>
+          <br>
+          <div class="divDeDivs">
+          <div id="div1">
+            <p class="p">Si tu monto neto es: 0</p>
+            <div >
+              <h3>IVA: 0</h3>
+              <h2>BRUTO: 0</h2>
+            </div>
+          </div>
+          <br> 
+          <div id="div2">
+            <p>Si tu monto bruto es: 0</p>
+            <h3>IVA: 0</h3>
+            <h2>NETO: 0</h2> 
+          </div>
+        </div>
+        </div>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
