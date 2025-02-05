@@ -1,0 +1,194 @@
+/* Importar fuente VT323 */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    background-color: #fcd34d;
+    background-image: url(images/bg.jpg);
+    font-family: "VT323", monospace; 
+    margin: 0;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+.general {
+    max-width: 56rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.titulo {
+    background-color: #fef3c7;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    animation: levitar 3s ease-in-out infinite alternate;
+    border-style: solid;
+}
+
+
+@keyframes levitar {
+    0% { transform: translateY(10px); }
+    100% { transform: translateY(-10px); }
+}
+
+.titulo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin: 0;
+}
+
+.titulo h2 {
+    font-size: 1.25rem;
+    color: #374151;
+    margin-top: 0.5rem;
+}
+
+/* Contenedor de la calculadora */
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border-style: solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input y etiqueta */
+.inputs {
+    text-align: center;
+}
+
+.inputs label {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+}
+
+.inputs input {
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #000000;
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+    text-align: center;
+    outline: none;
+    font-family: "VT323", monospace;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.inputs p {
+    font-size: 1.5rem;
+    color: #4b5563;
+    margin-top: 0.75rem;
+}
+
+/* Estilo de resultados */
+.divDeDivs {
+    background-color: #feed9d;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Resultados */
+#div1, #div2 {
+    background-color: #ffffff;
+    padding: 0.1rem;
+    padding-left: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    flex: 1;
+}
+
+#div1 h2, #div2 h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.divDeDivs {
+    font-size: 1.5rem;
+}
+
+/* Mensaje de error con animación */
+.error {
+    color: red;
+    font-size: 1.2rem;
+    height: 1.5rem; 
+    opacity: 0; /* no se muestra inicialmente */
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error.visible {
+    opacity: 1; /* Se muestra gradualmente */
+    transform: translateY(0);
+}
+
+/* OJOOOOOOOO */
+/* Los media queries hay que ajustarlos todavia, nunca habia trabajado con ellos */
+
+/* Móviles (hasta 767px) */
+@media (max-width: 767px) {
+    .titulo h1 {
+        font-size: 1.5rem; 
+    }
+
+    .titulo h2 {
+        font-size: 1rem; 
+    }
+
+    .inputs label {
+        font-size: 1.5rem;
+    }
+
+    .inputs input {
+        font-size: 1.2rem; 
+    }
+
+    .divDeDivs {
+        flex-direction: column; 
+        gap: 1rem;
+    }
+
+    #div1, #div2 {
+        padding: 1rem; 
+    }
+}
+
+/* Tablets (de 768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .titulo h1 {
+        font-size: 1.75rem;
+    }
+
+    .titulo h2 {
+        font-size: 1.1rem; 
+    }
+
+    .inputs label {
+        font-size: 1.7rem; 
+    }
+
+    .inputs input {
+        font-size: 1.4rem; 
+    }
+}
+
+/* Computadoras (desde 1025px en adelante) */
+@media (min-width: 1025px) {
+}
