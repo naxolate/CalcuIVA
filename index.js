@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    campoTexto.addEventListener("input", function() {
+        let valor = parseFloat(campoTexto.value) || 0; // Convertir a número
+        actualizarResultados(valor);
+    });
+
+
     function actualizarResultados(valor) { //misma funcion
         const totalBruto = valor * 1.19;
         const iva = valor * 0.19;
